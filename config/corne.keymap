@@ -34,22 +34,20 @@
 };
 
 / {
-        keymap {
-                compatible = "zmk,keymap";
-
-                default_layer {
-// -----------------------------------------------------------------------------------------
-// |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-// | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-// | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | SHFT |
-//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-                        bindings = <
-   &kp TAB   &kp Q &kp W &kp E &kp R &kp T   &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G   &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B   &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RSHFT
-                  &rgb_ug RGB_TOG &rgb_ug RGB_EFF &kp SPACE   &kp RET &mo 2 &kp RALT
-                        >;
-                };
+    keymap {
+    compatible = "zmk,keymap";
+    default_layer {
+      // |   ESC   |    ;    |    ,    |    .    |    P    |    Y    | XXX |    F    |    G    |    C    |    H    |    L    |   DEL   |
+      // |   TAB   |    A    |  ALT O  |  CTL E  | SHIFT I |    U    | XXX |    D    | SHIFT R |  CTL T  |  ALT N  |    S    |    -    |
+      // |    \    |    '    |    Q    |    J    |    K    |    X    | XXX |    B    |    M    |    W    |    V    |    Z    |    /    |
+      //                               |   WIN   |   MO1   |  SPACE  | XXX |  ENTER  |   MO2   |BACKSPACE|
+      bindings = <
+        &kp TAB   &kp SEMI &kp COMMA  &kp DOT     &kp P       &kp Y       &kp F     &kp G       &kp C       &kp H      &kp L &kp DEL
+        &kp ESC   &kp A    &mt LALT O &mt LCTRL E &mt LSHFT I &kp U       &kp D     &mt RSHFT R &mt RCTRL T &mt RALT N &kp S &kp MINUS
+        &kp BSLH  &kp SQT  &kp Q      &kp J       &kp K       &kp X       &kp B     &kp M       &kp W       &kp V      &kp Z &kp SLASH
+                                      &kp LGUI    &mo 1       &kp SPACE   &kp ENTER &mo 2       &kp BSPC
+      >;
+    };
                 lower_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
