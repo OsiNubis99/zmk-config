@@ -54,7 +54,7 @@
     // |    \    |    @    |         |    *    |    +    |    #    | XXX |    ~    |    =    |    ^    |         |    Ñ    |    /    |
     //                               |   WIN   |_________|  SPACE  | XXX |  ENTER  |   MO3   |BACKSPACE|
       bindings = <
-        &trans &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8         &kp N9        &kp N0    &trnas
+        &trans &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8         &kp N9        &kp N0    &trans
         &trans &kp AMPS &mt LALT LBKT &mt LCTRL LBRC &mt LSHFT LPAR &kp DOLLAR   &kp EXCL  &mt RSHFT RPAR &mt RCTRL RBRC &mt RALT RBKT &kp PRCNT &trans
         &trans &kp AT   &none         &kp STAR       &kp PLUS       &kp HASH     &kp TILDE &kp EQUAL      &kp CARET      &none         &kp N     &trans
                                       &kp LGUI       &trans         &kp SPACE    &kp ENTER &mo 3          &kp BSPC
@@ -83,7 +83,7 @@
         &none &none &none &kp K_VOL_UP &kp C_BRI_UP   &none   &none &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &none
         &none &none &none &kp K_MUTE   &kp C_BRI_AUTO &none   &none &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &none
         &none &none &none &kp K_VOL_DN &kp C_BRI_UP   &none   &none &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &none
-                          &none        &trans         &none   &none &trnas       &none
+                          &none        &trans         &none   &none &trans       &none
       >;
     };
   };
