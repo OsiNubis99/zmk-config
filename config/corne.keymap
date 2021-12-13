@@ -21,7 +21,7 @@
 		spi-max-frequency = <4000000>;
 
 		/* WS2812 */
-		chain-length = <6>; /* There are per-key RGB, but the first 6 are underglow */
+		chain-length = <7>; /* There are per-key RGB, but the first 6 are underglow */
 		spi-one-frame = <0x70>;
 		spi-zero-frame = <0x40>;
 	};
@@ -48,7 +48,7 @@
                                               &kp LGUI    &mo 1       &kp SPACE    &kp ENTER &mo 2       &kp BSPC
       >;
     };
-    layer_raise {
+    lower_layer {
     // |   ESC   |    1    |    2    |    3    |    4    |    5    | XXX |    6    |    7    |    8    |    9    |    0    |   DEL   |
     // |   TAB   |    &    |  ALT [  |  CTL {  | SHIFT ( |    $    | XXX |    !    | SHIFT ) |  CTL }  |  ALT  ] |    %    |    -    |
     // |    \    |    @    |         |    *    |    +    |    #    | XXX |    ~    |    =    |    ^    |         |    Ñ    |    /    |
@@ -60,7 +60,7 @@
                                           &kp LEFT_WIN   &trans         &kp SPACE    &kp ENTER &mo 3          &kp BSPC
       >;
     };
-    layer_lower {
+    raise_layer {
     // | ALT F12 |    F1   |    F2   |    F3   |    F4   |    F5   | XXX |    F6   |    F7   |    F8   |    F9   |   F10   | ALT F11 |
     // | CTL ESC |   HOME  | PG DOWN |  PG UP  |   END   |    =    | XXX |    *    |   LEFT  |   DOWN  |    UP   |  RIGHT  | CTL  -  |
     // | SHIFT \ |   CUT   |   COPY  |  PASTE  |         |   TOG2  | XXX |   TOG2  |  PRTSC  |   UNDO  |   REDO  |    +    | SHIFT / |
@@ -72,17 +72,17 @@
                                                        &kp LEFT_WIN  &mo 3    &kp SPACE      &kp ENTER  &trans           &kp BSPC
       >;
     };
-    layer_settings {
+    // settings_layer {
     // |         |         |         |  VOL UP |  BRI UP |         | XXX |         | BT PREV |         |  BT CLR | BT NEXT |         |
     // |         |         |         |  VOL AU |  BRI AU |         | XXX |         |  K PREV |   PLAY  |   STOP  |  K NEXT |         |
     // |         |         |         | VOLDOWN | BRIDOWN |         | XXX |         |         |         |         |         |         |
     //                               |         |_________|         | XXX |         |_________|         |
-      bindings = <
-        &trans  &trans  &trans  &kp K_VOL_UP  &kp C_BRI_UP    &trans      &trans       &bt BT_PRV   &trans            &bt BT_CLR   &bt BT_NXT   &trans
-        &trans  &trans  &trans  &kp K_MUTE    &kp C_BRI_AUTO  &trans      &trans       &kp K_PREV   &kp K_PLAY_PAUSE  &kp K_STOP   &kp K_NEXT   &trans
-        &trans  &trans  &trans  &kp K_VOL_DN  &kp C_BRI_UP    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5
-                                &trans        &trans          &trans      &trans       &trans       &trans
-      >;
-    };
+    //   bindings = <
+    //     &trans  &trans  &trans  &kp K_VOL_UP  &kp C_BRI_UP    &trans      &trans       &bt BT_PRV   &trans            &bt BT_CLR   &bt BT_NXT   &trans
+    //     &trans  &trans  &trans  &kp K_MUTE    &kp C_BRI_AUTO  &trans      &trans       &kp K_PREV   &kp K_PLAY_PAUSE  &kp K_STOP   &kp K_NEXT   &trans
+    //     &trans  &trans  &trans  &kp K_VOL_DN  &kp C_BRI_UP    &bt BT_CLR  &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2      &bt BT_SEL 3 &bt BT_SEL 4 &bt BT_SEL 5
+    //                             &trans        &trans          &trans      &trans       &trans       &trans
+    //   >;
+    // };
   };
 };
