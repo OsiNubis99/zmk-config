@@ -37,32 +37,30 @@
     keymap {
     compatible = "zmk,keymap";
     default_layer {
-      // |   ESC   |    ;    |    ,    |    .    |    P    |    Y    | XXX |    F    |    G    |    C    |    H    |    L    |   DEL   |
+      // |   ESC   |    ,    |    .    |    '    |    P    |    Y    | XXX |    F    |    H    |    J    |    K    |    L    |   DEL   |
       // |   TAB   |    A    |  ALT O  |  CTL E  | SHIFT I |    U    | XXX |    D    | SHIFT R |  CTL T  |  ALT N  |    S    |    -    |
-      // |    \    |    '    |    Q    |    J    |    K    |    X    | XXX |    B    |    M    |    W    |    V    |    Z    |    /    |
+      // |    \    |    ;    |    Q    |    G    |    C    |    X    | XXX |    B    |    M    |    W    |    V    |    Z    |    /    |
       //                               |   WIN   |   MO1   |  SPACE  | XXX |  ENTER  |   MO2   |BACKSPACE|
       bindings = <
-        &kp TAB   &kp SEMI &kp COMMA  &kp DOT     &kp P       &kp Y       &kp F     &kp G       &kp C       &kp H      &kp L &kp DEL
-        &kp ESC   &kp A    &mt LALT O &mt LCTRL E &mt LSHFT I &kp U       &kp D     &mt RSHFT R &mt RCTRL T &mt RALT N &kp S &kp MINUS
-        &kp BSLH  &kp SQT  &kp Q      &kp J       &kp K       &kp X       &kp B     &kp M       &kp W       &kp V      &kp Z &kp SLASH
-                                      &kp LGUI    &mo 1       &kp SPACE   &kp ENTER &mo 2       &kp BSPC
+        &kp ESC   &kp COMMA &kp DOT    &kp SQT     &kp P       &kp Y       &kp F     &kp H       &kp J       &kp K      &kp L &kp DEL
+        &kp TAB   &kp A     &mt LALT O &mt LCTRL E &mt LSHFT I &kp U       &kp D     &mt RSHFT R &mt RCTRL T &mt RALT N &kp S &kp MINUS
+        &kp BSLH  &kp SEMI  &kp Q      &kp G       &kp C       &kp X       &kp B     &kp M       &kp W       &kp V      &kp Z &kp SLASH
+                                       &kp LGUI    &mo 1       &kp SPACE   &kp ENTER &mo 2       &kp BSPC
       >;
     };
-                lower_layer {
-// -----------------------------------------------------------------------------------------
-// |  ESC |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-// | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-// | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-//                    | GUI |     | SPC |   | ENT |     | ALT |
-                        bindings = <
-   &kp ESC    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5            &kp N6   &kp N7   &kp N8 &kp N9    &kp N0 &kp BSPC
-   &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4      &kp LEFT &kp DOWN &kp UP &kp RIGHT &trans &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans            &trans   &trans   &trans &trans    &trans &trans
-                                        &kp LGUI     &trans       &kp SPACE         &kp RET &trans &kp RALT
-                        >;
-                };
-
-                raise_layer {
+    lower_layer {
+    // |   ESC   |    1    |    2    |    3    |    4    |    5    | XXX |    6    |    7    |    8    |    9    |    0    |   DEL   |
+    // |   TAB   |    &    |  ALT [  |  CTL {  | SHIFT ( |    $    | XXX |    !    | SHIFT ) |  CTL }  |  ALT  ] |    %    |    -    |
+    // |    \    |    @    |         |    *    |    +    |    #    | XXX |    ~    |    =    |    ^    |         |    Ñ    |    /    |
+    //                               |   WIN   |_________|  SPACE  | XXX |  ENTER  |   MO3   |BACKSPACE|
+      bindings = <
+        &kp ESC  &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8          &kp N9        &kp N0    &kp DEL
+        &kp TAB  &kp AMPS &mt LALT LBKT &mt LCTRL LBRC &mt LSHFT LPAR &kp DOLLAR   &kp EXCL  &mt RSHFT RPAR &mt RCTRL RBRC  &mt RALT RBKT &kp PRCNT &kp MINUS
+        &kp BSLH &kp AT   &none         &kp STAR       &kp PLUS       &kp HASH     &kp TILDE &kp EQUAL      &kp CARET       &none         &kp N     &kp SLASH
+                                        &kp LEFT_WIN   &trans         &kp SPACE    &kp ENTER &mo 3          &kp BSPC
+      >;
+    };
+    raise_layer {
 // -----------------------------------------------------------------------------------------
 // |  ESC |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
 // | CTRL |     |     |     |     |     |   |  -  |  =  |  {  |  }  | "|" |  `   |
