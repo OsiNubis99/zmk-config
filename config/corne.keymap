@@ -72,6 +72,19 @@
                                    &trans    &trans      &trans       &trans    &trans     &trans
       >;
     };
-
+    settings_layer {
+    /*
+    ** |         |         |         |  VOL UP |  BRI UP |         | XXX |         |         | BT PREV |  BT CLR | BT NEXT |         |
+    ** |         |         |         |  VOL AU |  BRI AU |         | XXX |         |  K PREV |   PLAY  |   STOP  |  K NEXT |         |
+    ** |         |         |         | VOLDOWN | BRIDOWN |         | XXX |         | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 |         |
+    **                               |         |_________|         | XXX |         |_________|         |
+    */
+      bindings = <
+        &none &none &none &kp K_VOL_UP &kp C_BRI_UP   &none   &none &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &none
+        &none &none &none &kp K_MUTE   &kp C_BRI_AUTO &none   &none &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &none
+        &none &none &none &kp K_VOL_DN &kp C_BRI_UP   &none   &none &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &none
+                          &none        &trans         &none   &none &trnas       &none
+      >;
+    };
   };
 };
