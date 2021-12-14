@@ -57,7 +57,7 @@
         &trans &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8         &kp N9        &kp N0    &trans
         &trans &kp AMPS &mt LALT LBKT &mt LCTRL LBRC &mt LSHFT LPAR &kp DOLLAR   &kp EXCL  &mt RSHFT RPAR &mt RCTRL RBRC &mt RALT RBKT &kp PRCNT &trans
         &trans &kp AT   &none         &kp STAR       &kp PLUS       &kp HASH     &kp TILDE &kp EQUAL      &kp CARET      &none         &kp N     &trans
-                                      &kp LGUI       &trans         &kp SPACE    &kp ENTER &mo 3          &kp BSPC
+                                      &trans         &trans         &trans       &trans    &mo 3          &trans
       >;
     };
     raise_layer {
@@ -69,7 +69,7 @@
         &none  &none     &none     &none     &kp K_PASTE &kp K_COPY   &none     &kp LEFT   &kp DOWN &kp UP  &kp RIGHT &none
         &none  &kp HOME  &kp PG_DN &kp PG_UP &kp END     &kp K_UNDO   &kp K_CUT &kp K_REDO &none    &none   &kp PSCRN &none
         &kp F1 &kp F2    &kp F3    &kp F4    &kp F5      &kp F6       &kp F7    &kp F8     &kp F9   &kp F10 &kp F11   &kp F12
-                                   &kp LGUI  &trans      &kp SPACE    &kp ENTER &trans     &kp BSPC
+                                   &trans    &trans      &trans       &trans    &trans     &trans
       >;
     };
     settings_layer {
@@ -80,9 +80,9 @@
     **                               |         |_________|         | XXX |         |_________|         |
     */
       bindings = <
-        &none &none &none &kp K_VOL_UP &kp C_BRI_UP   &none   &none &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &none
-        &none &none &none &kp K_MUTE   &kp C_BRI_AUTO &none   &none &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &none
-        &none &none &none &kp K_VOL_DN &kp C_BRI_UP   &none   &none &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &none
+        &rgb_ug RGB_HUI &rgb_ug RGB_SAI &rgb_ug RGB_EEF &kp K_VOL_UP &kp C_BRI_UP   &none   &none &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &none
+        &rgb_ug RGB_HUD &rgb_ug RGB_SAD &rgb_ug RGB_TOG &kp K_MUTE   &kp C_BRI_AUTO &none   &none &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &none
+        &rgb_ug RGB_SPI &rgb_ug RGB_SPD &rgb_ug RGB_EER &kp K_VOL_DN &kp C_BRI_UP   &none   &none &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &none
                           &none        &trans         &none   &none &trans       &none
       >;
     };
