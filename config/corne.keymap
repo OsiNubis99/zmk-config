@@ -74,16 +74,16 @@
     };
     settings_layer {
     /*
-    ** |         |         |         |  VOL UP |  BRI UP |         | XXX |         |         | BT PREV |  BT CLR | BT NEXT |         |
-    ** |         |         |         |  VOL AU |  BRI AU |         | XXX |         |  K PREV |   PLAY  |   STOP  |  K NEXT |         |
-    ** |         |         |         | VOLDOWN | BRIDOWN |         | XXX |         | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 |         |
+    ** | RGB HUI |         |         |  VOL UP |  BRI UP | RGB BDI | XXX | RGB BDI |         | BT PREV |  BT CLR | BT NEXT | RGB HUI |
+    ** | RGB HUD |         |         | VOL MTE |  BRI AU | RGB TOG | XXX | RGB TOG |  K PREV |   PLAY  |   STOP  |  K NEXT | RGB HUD |
+    ** | RGB EFF |         |         | VOLDOWN | BRIDOWN | RGB BRD | XXX | RGB BRD | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 | RGB EFF |
     **                               |         |_________|         | XXX |         |_________|         |
     */
       bindings = <
-        &rgb_ug RGB_HUI &rgb_ug RGB_BRI &rgb_ug RGB_EFF &kp K_VOL_UP &kp C_BRI_UP   &none   &none &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &none
-        &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_TOG &kp K_MUTE   &kp C_BRI_AUTO &none   &none &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &none
-        &rgb_ug RGB_SPI &rgb_ug RGB_SPD &rgb_ug RGB_EFR &kp K_VOL_DN &kp C_BRI_UP   &none   &none &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &none
-                                                        &none        &trans         &none   &none &trans       &none
+        &rgb_ug RGB_HUI &none &none &kp K_VOL_UP &kp C_BRI_UP   &rgb_ug RGB_BRI   &rgb_ug RGB_BRI &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &rgb_ug RGB_HUI
+        &rgb_ug RGB_HUD &none &none &kp K_MUTE   &kp C_BRI_AUTO &rgb_ug RGB_TOG   &rgb_ug RGB_TOG &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &rgb_ug RGB_HUD
+        &rgb_ug RGB_EFF &none &none &kp K_VOL_DN &kp C_BRI_UP   &rgb_ug RGB_BRD   &rgb_ug RGB_BRD &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &rgb_ug RGB_EFF
+                                    &none        &trans         &none             &none           &trans       &none
       >;
     };
   };
