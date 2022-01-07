@@ -70,12 +70,12 @@
     // |   ESC   |    1    |    2    |    3    |    4    |    5    | XXX |    6    |    7    |    8    |    9    |    0    |   DEL   |
     // |   TAB   |    &    |  ALT [  |  CTL {  | SHIFT ( |    $    | XXX |    !    | SHIFT ) |  CTL }  |  ALT  ] |    %    |    -    |
     // |    \    |    @    |         |    *    |    +    |    #    | XXX |    ~    |    =    |    ^    |         |    Ñ    |    /    |
-    //                               |   WIN   |_________|  SPACE  | XXX |  ENTER  |   MO4   |BACKSPACE|
+    //                               |   WIN   |_________|   MO4   | XXX |  ENTER  |   MO4   |BACKSPACE|
       bindings = <
         &trans &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8         &kp N9        &kp N0    &trans
         &trans &kp AMPS &mt LALT LBKT &mt LCTRL LBRC &mt LSHFT LPAR &kp DOLLAR   &kp EXCL  &mt RSHFT RPAR &mt RCTRL RBRC &mt RALT RBKT &kp PRCNT &trans
         &trans &kp AT   &none         &kp STAR       &kp PLUS       &kp HASH     &kp TILDE &kp EQUAL      &kp CARET      &none         &kp N     &trans
-                                      &trans         &trans         &trans       &trans    &mo 4          &trans
+                                      &trans         &trans         &mo 4        &trans    &mo 4          &trans
       >;
     };
     raise_layer {
