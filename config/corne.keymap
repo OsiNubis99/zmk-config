@@ -77,13 +77,27 @@
     ** | RGB HUI |         |         |  VOL UP |  BRI UP | RGB BDI | XXX | RGB BDI |         | BT PREV |  BT CLR | BT NEXT | RGB HUI |
     ** | RGB HUD |         |         | VOL MTE |  BRI AU | RGB TOG | XXX | RGB TOG |  K PREV |   PLAY  |   STOP  |  K NEXT | RGB HUD |
     ** | RGB EFF |         |         | VOLDOWN | BRIDOWN | RGB BRD | XXX | RGB BRD | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 | RGB EFF |
-    **                               |         |_________|         | XXX |         |_________|         |
+    **                               |  TOG 4  |_________|_________| XXX |         |_________|         |
     */
       bindings = <
         &rgb_ug RGB_HUI &none &none &kp K_VOL_UP &kp C_BRI_UP   &rgb_ug RGB_BRI   &rgb_ug RGB_BRI &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &rgb_ug RGB_HUI
         &rgb_ug RGB_HUD &none &none &kp K_MUTE   &kp C_BRI_AUTO &rgb_ug RGB_TOG   &rgb_ug RGB_TOG &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &rgb_ug RGB_HUD
         &rgb_ug RGB_EFF &none &none &kp K_VOL_DN &kp C_BRI_UP   &rgb_ug RGB_BRD   &rgb_ug RGB_BRD &bt BT_SEL 0 &bt BT_SEL 1     &bt BT_SEL 2 &bt BT_SEL 3 &rgb_ug RGB_EFF
-                                    &none        &trans         &none             &none           &trans       &none
+                                    &tog 4       &trans         &trans            &none           &trans       &none
+      >;
+    };
+    gaming_layer {
+   /*
+   ** |  ESC  |  Q  |  W  |  E  |  R  |  T  | XXX |  Y  |  U   |  I  |  O  |  P  | BKSP |
+   ** |  TAB  |  A  |  S  |  D  |  F  |  G  | XXX |  H  |  J   |  K  |  L  |  ;  |  '   |
+   ** |   M   |  Z  |  X  |  C  |  V  |  B  | XXX |  N  |  M   |  ,  |  .  |  /  | ESC  |
+   **                     | GUI | LWR | SPC | XXX | ENT | RSE  | ALT |
+   */
+     bindings = <
+       &kp ESC &kp Q &kp W &kp E    &kp R &kp T       &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
+       &kp TAB &kp A &kp S &kp D    &kp F &kp G       &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+       &kp M   &kp Z &kp X &kp C    &kp V &kp B       &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                           &kp LGUI &mo 1 &kp SPACE   &kp RET &mo 2 &kp RALT
       >;
     };
   };
