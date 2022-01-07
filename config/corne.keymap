@@ -41,10 +41,10 @@
   keymap {
     compatible = "zmk,keymap";
     default_layer {
-      // |   ESC   |    ,    |    .    |    '    |    P    |    Y    | XXX |    F    |    H    |    J    |    K    |    L    |   DEL   |
-      // |   TAB   |    A    |  ALT O  |  CTL E  | SHIFT I |    U    | XXX |    D    | SHIFT R |  CTL T  |  ALT N  |    S    |    -    |
-      // |    \    |    ;    |    Q    |    G    |    C    |    X    | XXX |    B    |    M    |    W    |    V    |    Z    |    /    |
-      //                               |   WIN   |   MO2   |  SPACE  | XXX |  ENTER  |   MO3   |BACKSPACE|
+    // |   ESC   |    ,    |    .    |    '    |    P    |    Y    | XXX |    F    |    H    |    J    |    K    |    L    |   DEL   |
+    // |   TAB   |    A    |  ALT O  |  CTL E  | SHIFT I |    U    | XXX |    D    | SHIFT R |  CTL T  |  ALT N  |    S    |    -    |
+    // |    \    |    ;    |    Q    |    G    |    C    |    X    | XXX |    B    |    M    |    W    |    V    |    Z    |    /    |
+    //                               |   WIN   |   MO2   |  SPACE  | XXX |  ENTER  |   MO3   |BACKSPACE|
       bindings = <
         &kp ESC     &kp COMMA &kp DOT    &kp SQT     &kp P       &kp Y       &kp F     &kp H       &kp J       &kp K      &kp L &kp DEL
         &kp TAB     &kp A     &mt LALT O &mt LCTRL E &mt LSHFT I &kp U       &kp D     &mt RSHFT R &mt RCTRL T &mt RALT N &kp S &kp MINUS
@@ -53,29 +53,27 @@
       >;
     };
     gaming_layer {
-   /*
-   ** |  ESC  |  Q  |  W  |  E  |  R  |  T  | XXX |  Y  |  U   |  I  |  O  |  P  | BKSP |
-   ** |  TAB  |  A  |  S  |  D  |  F  |  G  | XXX |  H  |  J   |  K  |  L  |  ;  |  '   |
-   ** |   M   |  Z  |  X  |  C  |  V  |  B  | XXX |  N  |  M   |  ,  |  .  |  /  | ESC  |
-   **                     | WIN | MO2 | SPC | XXX | ENT | RSE  | ALT |
-   */
-     bindings = <
-       &kp ESC &kp Q &kp W &kp E    &kp R &kp T       &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
-       &kp TAB &kp A &kp S &kp D    &kp F &kp G       &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-       &kp M   &kp Z &kp X &kp C    &kp V &kp B       &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
-                           &kp LGUI &mo 2 &kp SPACE   &kp RET &mo 3 &kp RALT
+    // |   ESC   |    Q    |    W    |    E    |    R    |    T    | XXX |    Y    |    U     |    I    |    O    |    P    |   BKSP   |
+    // |   TAB   |    A    |    S    |    D    |    F    |    G    | XXX |    H    |    J     |    K    |    L    |    ;    |    '     |
+    // |    M    |    Z    |    X    |    C    |    V    |    B    | XXX |    N    |    M     |    ,    |    .    |    /    |   ESC    |
+    //                               |   WIN   |   MO2   |   SPC   | XXX |   ENT   |   RSE    |   ALT   |
+      bindings = <
+        &kp ESC &kp Q &kp W &kp E    &kp R &kp T       &kp Y   &kp U  &kp I     &kp O   &kp P    &kp BSPC
+        &kp TAB &kp A &kp S &kp D    &kp F &kp G       &kp H   &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+        &lt 4 M &kp Z &kp X &kp C    &kp V &kp B       &kp N   &kp M  &kp COMMA &kp DOT &kp FSLH &kp ESC
+                            &kp LGUI &mo 2 &kp SPACE   &kp RET &mo 3 &kp RALT
       >;
     };
     lower_layer {
     // |   ESC   |    1    |    2    |    3    |    4    |    5    | XXX |    6    |    7    |    8    |    9    |    0    |   DEL   |
     // |   TAB   |    &    |  ALT [  |  CTL {  | SHIFT ( |    $    | XXX |    !    | SHIFT ) |  CTL }  |  ALT  ] |    %    |    -    |
     // |    \    |    @    |         |    *    |    +    |    #    | XXX |    ~    |    =    |    ^    |         |    Ñ    |    /    |
-    //                               |   WIN   |_________|   MO4   | XXX |  ENTER  |   MO4   |BACKSPACE|
+    //                               |   WIN   |_________|  SPACE  | XXX |  ENTER  |   MO4   |BACKSPACE|
       bindings = <
         &trans &kp N1   &kp N2        &kp N3         &kp N4         &kp N5       &kp N6    &kp N7         &kp N8         &kp N9        &kp N0    &trans
         &trans &kp AMPS &mt LALT LBKT &mt LCTRL LBRC &mt LSHFT LPAR &kp DOLLAR   &kp EXCL  &mt RSHFT RPAR &mt RCTRL RBRC &mt RALT RBKT &kp PRCNT &trans
         &trans &kp AT   &none         &kp STAR       &kp PLUS       &kp HASH     &kp TILDE &kp EQUAL      &kp CARET      &none         &kp N     &trans
-                                      &trans         &trans         &mo 4        &trans    &mo 4          &trans
+                                      &trans         &trans         &trans        &trans    &mo 4          &trans
       >;
     };
     raise_layer {
@@ -91,12 +89,10 @@
       >;
     };
     settings_layer {
-    /*
-    ** |         | RGB HUI |         |  VOL UP |  BRI UP | RGB BDI | XXX | RGB BDI |         | BT PREV |  BT CLR | BT NEXT | RGB HUI |
-    ** |         | RGB HUD |         | VOL MTE |  BRI AU | RGB TOG | XXX | RGB TOG |  K PREV |   PLAY  |   STOP  |  K NEXT | RGB HUD |
-    ** |_________| RGB EFF |         | VOLDOWN | BRIDOWN | RGB BRD | XXX | RGB BRD | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 | RGB EFF |
-    **                               |  TOG 1  |_________|         | XXX |         |_________|         |
-    */
+    // |         | RGB HUI |         |  VOL UP |  BRI UP | RGB BDI | XXX | RGB BDI |         | BT PREV |  BT CLR | BT NEXT | RGB HUI |
+    // |         | RGB HUD |         | VOL MTE |  BRI AU | RGB TOG | XXX | RGB TOG |  K PREV |   PLAY  |   STOP  |  K NEXT | RGB HUD |
+    // |_________| RGB EFF |         | VOLDOWN | BRIDOWN | RGB BRD | XXX | RGB BRD | BT_SEL0 | BT_SEL0 | BT_SEL0 | BT_SEL0 | RGB EFF |
+    //                               |  TOG 1  |_________|         | XXX |         |_________|         |
       bindings = <
         &none  &rgb_ug RGB_HUI &none &kp K_VOL_UP &kp C_BRI_UP   &rgb_ug RGB_BRI   &rgb_ug RGB_BRI &none        &bt BT_PRV       &bt BT_CLR   &bt BT_NXT   &rgb_ug RGB_HUI
         &none  &rgb_ug RGB_HUD &none &kp K_MUTE   &kp C_BRI_AUTO &rgb_ug RGB_TOG   &rgb_ug RGB_TOG &kp K_PREV   &kp K_PLAY_PAUSE &kp K_STOP   &kp K_NEXT   &rgb_ug RGB_HUD
