@@ -1,13 +1,17 @@
+
 /*
  * Copyright (c) 2020 The ZMK Contributors
  *
  * SPDX-License-Identifier: MIT
  */
+
+
 /* THIS FILE WAS GENERATED!
  *
  * This file was generated automatically. You may or may not want to
  * edit it directly.
  */
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
@@ -55,28 +59,28 @@
 
         default_layer {
             bindings = <
-    &kp ESC      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P      &kp Y                        &kp F     &kp R   &kp T   &kp N   &kp S           &kp DEL
-  &sk LCTRL          &kp A    &kp O           &kp E   &kp I      &kp U                        &kp D     &kp H   &kp K   &kp J   &kp L          &sk LALT
- &lt 4 BSLH  &kp SEMICOLON    &kp Q           &kp G   &kp C      &kp X                        &kp B     &kp M   &kp W   &kp V   &kp Z  &mt RSHIFT SLASH
-                                       &mt LGUI TAB   &mo 2  &kp SPACE            &mt LSHIFT RETURN  &kp BSPC   &mo 3
+    &kp ESC      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P      &kp Y                    &kp F   &kp R     &kp T   &kp N   &kp S           &kp DEL
+  &sk LCTRL          &kp A    &kp O           &kp E   &kp I      &kp U                    &kp D   &kp H     &kp K   &kp J   &kp L          &sk LALT
+ &lt 4 BSLH  &kp SEMICOLON    &kp Q           &kp G   &kp C      &kp X                    &kp B   &kp M     &kp W   &kp V   &kp Z  &mt RSHIFT SLASH
+                                       &mt LGUI TAB   &mo 2  &kp SPACE            &mt LSHFT RET   &mo 3  &kp BSPC
             >;
         };
 
         layer_gaming {
             bindings = <
- &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T               &kp Y   &kp U       &kp I    &kp O     &kp P    &kp DEL
- &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G               &kp H   &kp J       &kp K    &kp L  &kp SEMI   &sk LALT
- &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B               &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
-                          &kp N2   &mo 2  &kp SPACE            &kp BSPC   &mo 3  &kp RETURN
+ &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T                 &kp Y   &kp U      &kp I    &kp O     &kp P    &kp DEL
+ &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G                 &kp H   &kp J      &kp K    &kp L  &kp SEMI   &sk LALT
+ &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B                 &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
+                          &kp N2   &mo 2  &kp SPACE            &kp RETURN   &mo 3   &kp BSPC
             >;
         };
 
-        layer_LOWER {
+        layer_numbers {
             bindings = <
    &kp ESC   &kp EXCL     &kp AT   &kp HASH   &kp DLLR  &kp PRCNT            &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR     &kp DEL
  &sk LCTRL     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5               &kp N6    &kp N7           &kp N8    &kp N9    &kp N0    &sk LALT
   &kp LGUI  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS             &kp PLUS  &kp LBKT         &kp RBKT  &kp LBRC  &kp RBRC  &sk RSHIFT
-                                     &trans     &trans     &trans             &kp BSPC  &sk RGUI          &kp RET
+                                     &trans     &trans     &trans              &kp RET  &sk RGUI         &kp BSPC
             >;
         };
 
