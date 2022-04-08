@@ -59,7 +59,7 @@
 
         default_layer {
             bindings = <
-  &sk LCTRL      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P      &kp Y                    &kp F   &kp R     &kp T   &kp N   &kp S          &sk RALT
+  &sk LCTRL      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P      &kp Y                    &kp F   &kp R     &kp T   &kp N   &kp S          &sk LALT
     &kp TAB          &kp A    &kp O           &kp E   &kp I      &kp U                    &kp D   &kp H     &kp K   &kp J   &kp L           &kp DEL
  &lt 4 BSLH  &kp SEMICOLON    &kp Q           &kp G   &kp C      &kp X                    &kp B   &kp M     &kp W   &kp V   &kp Z  &mt RSHIFT SLASH
                                        &mt LGUI ESC   &mo 2  &kp SPACE            &mt LSHFT RET   &mo 3  &kp BSPC
