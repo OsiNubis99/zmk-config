@@ -11,6 +11,16 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+	chosen {
+		zmk,underglow = &led_strip;
+	};
+};
+
+&mt {
+  tapping-term-ms = <400>;
+};
+
+/ {
     keymap {
         compatible = "zmk,keymap";
 
