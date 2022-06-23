@@ -55,7 +55,7 @@
         default_layer {
             bindings = <
   &sk LCTRL      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P     &kp Y                    &kp F   &kp R     &kp T   &kp N   &kp S          &sk LALT
-    &kp TAB          &kp A    &kp O           &kp E   &kp I     &kp U                    &kp D   &kp H     &kp K   &kp J   &kp L           &kp DEL
+    &kp TAB          &kp A    &kp O           &kp E   &kp I     &kp U                    &kp D   &kp H     &kp J   &kp K   &kp L           &kp DEL
  &lt 4 BSLH  &kp SEMICOLON    &kp Q           &kp G   &kp C     &kp X                    &kp B   &kp M     &kp W   &kp V   &kp Z  &mt RSHIFT SLASH
                                        &mt LGUI ESC   &mo 2 &kp SPACE            &mt LSHFT RET   &mo 3  &kp BSPC
             >;
@@ -82,7 +82,7 @@
         layer_lower {
             bindings = <
  &sk LCTRL     &none      &none      &none  &kp K_PASTE  &kp K_COPY            &kp PSCRN  &kp K_REDO   &none     &none      &none  &sk LALT
-     &none  &kp HOME  &kp PG_DN  &kp PG_UP      &kp END  &kp K_UNDO            &kp K_CUT    &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT     &none
+     &none  &kp HOME  &kp PG_DN  &kp PG_UP      &kp END  &kp K_UNDO            &kp K_CUT    &kp LEFT  &kp DOWN  &UP kp  &kp RIGHT     &none
     &kp F1    &kp F2     &kp F3     &kp F4       &kp F5      &kp F6               &kp F7      &kp F8  &kp F9   &kp F10    &kp F11   &kp F12
                                      &none        &none       &none               &trans      &trans  &trans
             >;
