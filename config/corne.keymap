@@ -5,9 +5,7 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/led/led.h>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
 
@@ -53,51 +51,66 @@
 };
 
 / {
-     macros {
+    macros {
         paste: paste {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LEFT_SHIFT>,
-                <&macro_tap &kp INSERT>,
-                <&macro_release &kp LEFT_SHIFT>;
+                <&macro_press>,
+                <&kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp INSERT>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT>;
         };
         copy: copy {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp RCTRL>,
-                <&macro_tap &kp C>,
-                <&macro_release &kp RCTRL>;
+                <&macro_press>,
+                <&kp RCTRL>,
+                <&macro_tap>,
+                <&kp C>,
+                <&macro_release>,
+                <&kp RCTRL>;
         };
         cut: cut {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp RIGHT_CONTROL>,
-                <&macro_tap &kp X>,
-                <&macro_release &kp RCTRL>;
+                <&macro_press>,
+                <&kp RIGHT_CONTROL>,
+                <&macro_tap>,
+                <&kp X>,
+                <&macro_release>,
+                <&kp RCTRL>;
         };
         undo: undo {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp RIGHT_CONTROL>,
-                <&macro_tap &kp Z>,
-                <&macro_release &kp RCTRL>;
+                <&macro_press>,
+                <&kp RIGHT_CONTROL>,
+                <&macro_tap>,
+                <&kp Z>,
+                <&macro_release>,
+                <&kp RCTRL>;
         };
         redo: redo {
             compatible = "zmk,behavior-macro";
             label = "new_macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp RIGHT_CONTROL &kp LEFT_SHIFT>,
-                <&macro_tap &kp Z>,
-                <&macro_release &kp LEFT_SHIFT &kp RCTRL>;
+                <&macro_press>,
+                <&kp RIGHT_CONTROL &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp Z>,
+                <&macro_release>,
+                <&kp LEFT_SHIFT &kp RCTRL>;
         };
     };
 
@@ -106,28 +119,28 @@
 
         default_layer {
             bindings = <
-  &sk LCTRL      &kp COMMA  &kp DOT  &kp APOSTROPHE   &kp P      &kp Y     &kp F   &kp R          &kp T   &kp N   &kp S          &sk LALT
-    &kp TAB          &kp A    &kp O           &kp E   &kp I      &kp U     &kp D   &kp H          &kp K   &kp J   &kp L           &kp DEL
- &lt 4 BSLH  &kp SEMICOLON    &kp Q           &kp G   &kp C      &kp X     &kp B   &kp M          &kp W   &kp V   &kp Z  &mt RSHIFT SLASH
-                                       &mt LGUI ESC   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &mt LSHFT RET
+ &lt 4 TAB   &kp Q   &kp W     &kp E   &kp R      &kp T      &kp Y   &kp U      &kp I    &kp O      &kp P  &kp BACKSPACE
+   &kp ESC   &kp A   &kp S     &kp D   &kp F      &kp G      &kp H   &kp J      &kp K    &kp L   &kp SEMI       &kp RALT
+ &kp LCTRL   &kp Z   &kp X     &kp C   &kp V      &kp B      &kp N   &kp M  &kp COMMA  &kp DOT  &kp SLASH      &kp RCTRL
+                            &kp LCMD   &mo 2  &kp SPACE  &kp RSHFT   &mo 3  &kp ENTER
             >;
         };
 
         layer_gaming {
             bindings = <
- &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T     &kp Y   &kp U       &kp I    &kp O     &kp P    &kp DEL
- &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G     &kp H   &kp J       &kp K    &kp L  &kp SEMI   &sk LALT
- &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
-                          &kp N2   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &kp RETURN
+ &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T       &kp Y   &kp U      &kp I    &kp O     &kp P    &kp DEL
+ &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G       &kp H   &kp J      &kp K    &kp L  &kp SEMI   &sk LALT
+ &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B       &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
+                          &kp N2   &mo 2  &kp SPACE  &kp RETURN   &mo 3   &kp BSPC
             >;
         };
 
         layer_numbers {
             bindings = <
- &sk LCTRL   &kp EXCL     &kp AT   &kp HASH   &kp DLLR  &kp PRCNT  &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR    &sk LALT
-     &none     &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6    &kp N7           &kp N8    &kp N9    &kp N0       &none
-  &kp LGUI  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS   &kp PLUS  &kp LBKT         &kp LBRC  &kp RBRC  &kp RBKT  &sk RSHIFT
-                                     &trans     &trans     &trans   &kp BSPC  &sk RGUI          &kp RET
+ &trans     &kp AT     &kp AT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp QUESTION  &kp STAR  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &kp DEL
+  &none     &kp N1     &kp N2      &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp EXCL   &kp DOT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp PLUS   &trans
+ &trans  &kp EQUAL  &kp GRAVE        &kp LEFT_BRACE        &kp RIGHT_BRACE      &kp SEMI    &kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp SLASH   &trans
+                                             &trans                 &trans        &trans    &trans        &trans        &trans
             >;
         };
 
@@ -142,9 +155,9 @@
 
         layer_settings {
             bindings = <
-    &out OUT_TOG  &rgb_ug RGB_HUI   &none  &bt BT_NXT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI         &none         &none             &none         &none         &none   &none
+          &trans  &rgb_ug RGB_HUI   &none  &bt BT_NXT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI         &none         &none             &none         &none         &none   &none
  &rgb_ug RGB_TOG  &rgb_ug RGB_HUD   &none  &bt BT_CLR     &kp C_BRI_DN     &kp C_BRI_UP         &none    &kp K_PREV  &kp K_PLAY_PAUSE    &kp K_STOP    &kp K_NEXT   &none
-          &trans  &rgb_ug RGB_EFF   &none  &bt BT_PRV     &kp C_VOL_DN     &kp C_VOL_UP  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &none
+           &none  &rgb_ug RGB_EFF   &none  &bt BT_PRV     &kp C_VOL_DN     &kp C_VOL_UP  &bt BT_SEL 0  &bt BT_SEL 1      &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4   &none
                                                &tog 1     &bt BT_SEL 0     &bt BT_SEL 1         &none         &none             &none
             >;
         };
