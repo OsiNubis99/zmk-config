@@ -112,6 +112,30 @@
                 <&macro_release>,
                 <&kp LEFT_SHIFT &kp RCTRL>;
         };
+        scrnsh_full: scrnsh_full {
+            compatible = "zmk,behavior-macro";
+            label = "new_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD &kp LEFT_SHIFT>,
+                <&macro_tap>,
+                <&kp NUMBER_3>,
+                <&macro_release>,
+                <&kp LCMD &kp LEFT_SHIFT>;
+        };
+        scrunch_part: scrunch_part {
+            compatible = "zmk,behavior-macro";
+            label = "new_macro";
+            #binding-cells = <0>;
+            bindings =
+                <&macro_press>,
+                <&kp LCMD &kp LSHFT>,
+                <&macro_tap>,
+                <&kp NUMBER_4>,
+                <&macro_release>,
+                <&kp LCMD &kp LSHFT>;
+        };
     };
 
     keymap {
@@ -119,37 +143,37 @@
 
         default_layer {
             bindings = <
-          &lt 4 ESC  &kp COMMA  &kp DOT     &kp C   &kp P      &kp Y     &kp D   &kp M      &kp U   &kp F          &kp Z    &kp RALT
- &mt LEFT_SHIFT TAB      &kp A    &kp S     &kp R   &kp T      &kp H     &kp L   &kp N      &kp E   &kp O          &kp I  &kp RSHIFT
-          &kp LCTRL  &kp SLASH    &kp Q     &kp J   &kp K      &kp X     &kp G   &kp B      &kp V   &kp W  &kp SEMICOLON   &kp RCTRL
-                                         &kp LCMD   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &kp ENTER
+          &lt 4 ESC  &kp COMMA  &kp DOT     &kp C   &kp P      &kp Y      &kp D   &kp M     &kp U   &kp F          &kp Z    &kp RALT
+ &mt LEFT_SHIFT TAB      &kp A    &kp S     &kp R   &kp T      &kp H      &kp L   &kp N     &kp E   &kp O          &kp I  &kp RSHIFT
+          &kp LCTRL  &kp SLASH    &kp Q     &kp J   &kp K      &kp X      &kp G   &kp B     &kp V   &kp W  &kp SEMICOLON   &kp RCTRL
+                                         &kp LCMD   &mo 2  &kp SPACE  &kp ENTER   &mo 3  &kp BSPC
             >;
         };
 
         layer_gaming {
             bindings = <
- &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T       &kp Y   &kp U      &kp I    &kp O     &kp P    &kp DEL
- &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G       &kp H   &kp J      &kp K    &kp L  &kp SEMI   &sk LALT
- &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B       &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
-                          &kp N2   &mo 2  &kp SPACE  &kp RETURN   &mo 3   &kp BSPC
+ &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T     &kp Y   &kp U       &kp I    &kp O     &kp P    &kp DEL
+ &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G     &kp H   &kp J       &kp K    &kp L  &kp SEMI   &sk LALT
+ &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
+                          &kp N2   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &kp RETURN
             >;
         };
 
         layer_numbers {
             bindings = <
- &trans      &kp GRAVE        &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS   &kp SQT    &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &trans
-  &none  &kp AMPERSAND     &kp BACKSLASH      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp EXCL  &kp PERCENT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp STAR  &trans
- &trans  &kp LESS_THAN  &kp GREATER_THAN        &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp AT       &kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp CARET  &trans
-                                                        &trans                 &trans    &trans      &kp DEL        &trans        &trans
+ &trans         &kp LT         &kp GT  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EXCL  &kp PRCNT  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3   &kp STAR  &trans
+  &none  &kp AMPERSAND  &kp BACKSLASH      &kp LEFT_BRACKET      &kp RIGHT_BRACKET   &kp SQT  &kp EQUAL  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp MINUS  &trans
+ &trans      &kp GRAVE     &kp DOLLAR        &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp AT     &kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp CARET  &trans
+                                                     &trans                 &trans    &trans     &trans        &trans       &kp DEL
             >;
         };
 
         layer_lower {
             bindings = <
- &trans    &kp F1     &kp F2     &kp F3   &paste   &copy  &kp PSCRN     &redo   &kp F4    &kp F5     &kp F6  &trans
- &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &undo       &cut  &kp LEFT   &kp UP  &kp DOWN  &kp RIGHT  &trans
- &trans    &kp F7     &kp F8     &kp F9    &none   &none      &none     &none  &kp F10   &kp F11    &kp F12  &trans
-                                 &trans   &trans  &trans     &trans    &trans   &trans
+ &trans    &kp F1     &kp F2     &kp F3   &paste   &copy  &scrnsh_full  &scrunch_part    &kp UP     &kp F4   &kp F5  &trans
+ &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &redo         &undo       &kp LEFT  &kp DOWN  &kp RIGHT   &kp F6  &trans
+ &trans    &kp F7     &kp F8     &kp F9    &none    &cut         &none          &none   &kp F10    &kp F11  &kp F12  &trans
+                                 &trans   &trans  &trans        &trans         &trans    &trans
             >;
         };
 
