@@ -5,7 +5,6 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/led/led.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
@@ -120,19 +119,19 @@
 
         default_layer {
             bindings = <
- &lt 4 ESC   &kp Q   &kp W     &kp E   &kp R      &kp T      &kp Y   &kp U      &kp I    &kp O      &kp P    &kp RALT
-   &kp TAB   &kp A   &kp S     &kp D   &kp F      &kp G      &kp H   &kp J      &kp K    &kp L   &kp SEMI  &kp RSHIFT
- &kp LCTRL   &kp Z   &kp X     &kp C   &kp V      &kp B      &kp N   &kp M  &kp COMMA  &kp DOT  &kp SLASH   &kp RCTRL
-                            &kp LCMD   &mo 2  &kp SPACE  &kp ENTER   &mo 3   &kp BSPC
+          &lt 4 ESC  &kp COMMA  &kp DOT     &kp C   &kp P      &kp Y     &kp D   &kp M      &kp U   &kp F          &kp Z    &kp RALT
+ &mt LEFT_SHIFT TAB      &kp A    &kp S     &kp R   &kp T      &kp H     &kp L   &kp N      &kp E   &kp O          &kp I  &kp RSHIFT
+          &kp LCTRL  &kp SLASH    &kp Q     &kp J   &kp K      &kp X     &kp G   &kp B      &kp V   &kp W  &kp SEMICOLON   &kp RCTRL
+                                         &kp LCMD   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &kp ENTER
             >;
         };
 
         layer_gaming {
             bindings = <
- &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T     &kp Y   &kp U       &kp I    &kp O     &kp P    &kp DEL
- &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G     &kp H   &kp J       &kp K    &kp L  &kp SEMI   &sk LALT
- &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B     &kp N   &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
-                          &kp N2   &mo 2  &kp SPACE  &kp BSPC   &mo 3  &kp RETURN
+ &kp ESC   &kp Q   &kp W   &kp E   &kp R      &kp T       &kp Y   &kp U      &kp I    &kp O     &kp P    &kp DEL
+ &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G       &kp H   &kp J      &kp K    &kp L  &kp SEMI   &sk LALT
+ &lt 4 M   &kp Z   &kp X   &kp C   &kp V      &kp B       &kp N   &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
+                          &kp N2   &mo 2  &kp SPACE  &kp RETURN   &mo 3   &kp BSPC
             >;
         };
 
@@ -141,7 +140,7 @@
  &trans      &kp GRAVE        &kp DOLLAR  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS   &kp SQT    &kp EQUAL  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS  &trans
   &none  &kp AMPERSAND     &kp BACKSLASH      &kp LEFT_BRACKET      &kp RIGHT_BRACKET  &kp EXCL  &kp PERCENT  &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6   &kp STAR  &trans
  &trans  &kp LESS_THAN  &kp GREATER_THAN        &kp LEFT_BRACE        &kp RIGHT_BRACE    &kp AT       &kp N0  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp CARET  &trans
-                                                        &trans                 &trans    &trans       &trans        &trans       &kp DEL
+                                                        &trans                 &trans    &trans      &kp DEL        &trans        &trans
             >;
         };
 
