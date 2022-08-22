@@ -194,5 +194,14 @@
                                            &kp LCTRL        &trans  &mt LALT SPACE  &trans  &trans  &trans
             >;
         };
+
+        LAYER_GSHOOTER {
+            bindings = <
+ &lt 4 ESC   &kp Q   &kp W   &kp E   &kp R      &kp T  &trans  &trans  &trans  &trans  &trans  &trans
+   &kp TAB   &kp A   &kp S   &kp D   &kp F      &kp G  &trans  &trans  &trans  &trans  &trans  &trans
+       &kp   &kp Z   &kp X   &kp C   &kp V      &kp B  &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &kp SPACE  &trans  &trans  &trans
+            >;
+        };
     };
 };
