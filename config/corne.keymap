@@ -54,7 +54,7 @@
   macros {
     paste: paste {
       compatible = "zmk,behavior-macro";
-      label = "new_macro";
+      label = "Paste Macro";
       #binding-cells = <0>;
       bindings =
         <&macro_press &kp LEFT_SHIFT>,
@@ -63,7 +63,7 @@
     };
     copy: copy {
       compatible = "zmk,behavior-macro";
-      label = "new_macro";
+      label = "Copy Macro";
       #binding-cells = <0>;
       bindings =
         <&macro_press &kp RCTRL>,
@@ -72,7 +72,7 @@
     };
     cut: cut {
       compatible = "zmk,behavior-macro";
-      label = "new_macro";
+      label = "Cut Macro";
       #binding-cells = <0>;
       bindings =
         <&macro_press &kp RIGHT_CONTROL>,
@@ -81,7 +81,7 @@
     };
     undo: undo {
       compatible = "zmk,behavior-macro";
-      label = "new_macro";
+      label = "Undo Macro";
       #binding-cells = <0>;
       bindings =
         <&macro_press &kp RIGHT_CONTROL>,
@@ -90,7 +90,7 @@
     };
     redo: redo {
       compatible = "zmk,behavior-macro";
-      label = "new_macro";
+      label = "Redo Macro";
       #binding-cells = <0>;
       bindings =
         <&macro_press &kp RIGHT_CONTROL &kp LEFT_SHIFT>,
