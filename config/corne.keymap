@@ -154,7 +154,7 @@
     &trans    &kp I   &kp P   &kp O   &kp P   &kp I        &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
                               &trans  &trans  &trans       &trans    &kp LGUI  &trans
       >;
-    }:
+    };
 
     KB_SETTINGS {
       bindings = <
