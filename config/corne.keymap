@@ -101,7 +101,8 @@
       compatible = "zmk,behavior-macro";
       label = "Top Macro";
       #binding-cells = <0>;
-      bindings = 
+      bindings =
+        <&macro_tap_time 10>,
         <&macro_tap &kp T &kp O &kp P &kp RET>;
     };
     jgline: jgline {
@@ -109,6 +110,7 @@
       label = "Jg Macro";
       #binding-cells = <0>;
       bindings =
+        <&macro_tap_time 10>,
         <&macro_tap &kp J &kp G &kp RET>;
     };
     midline: midline {
@@ -116,6 +118,7 @@
       label = "Mid Macro";
       #binding-cells = <0>;
       bindings =
+        <&macro_tap_time 10>,
         <&macro_tap &kp M &kp I &kp D &kp RET>;
     };
     adcline: adcline {
@@ -123,6 +126,7 @@
       label = "Adc Macro";
       #binding-cells = <0>;
       bindings =
+        <&macro_tap_time 10>,
         <&macro_tap &kp A &kp D &kp C &kp RET>;
     };
     supline: supline {
@@ -130,6 +134,7 @@
       label = "Sup Macro";
       #binding-cells = <0>;
       bindings =
+        <&macro_tap_time 10>,
         <&macro_tap &kp S &kp U &kp P &kp RET>;
     };
   };
