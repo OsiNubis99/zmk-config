@@ -97,36 +97,6 @@
         <&macro_tap &kp Z>,
         <&macro_release &kp LEFT_SHIFT &kp RCTRL>;
     };
-    top: top {
-      compatible = "zmk,behavior-macro";
-      label = "Top Macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp T &kp O &kp P &kp RETURN>;
-    };
-    jg: jg {
-      compatible = "zmk,behavior-macro";
-      label = "Jg Macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp J &kp G &kp RETURN>;
-    };
-    mid: mid {
-      compatible = "zmk,behavior-macro";
-      label = "Mid Macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp M &kp I &kp D &kp RETURN>;
-    };
-    adc: adc {
-      compatible = "zmk,behavior-macro";
-      label = "Adc Macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp A &kp D &kp C &kp RETURN>;
-    };
-    sup: sup {
-      compatible = "zmk,behavior-macro";
-      label = "Sup Macro";
-      #binding-cells = <0>;
-      bindings = <&macro_tap &kp S &kp U &kp P &kp RETURN>;
-    };
   };
 
   keymap {
