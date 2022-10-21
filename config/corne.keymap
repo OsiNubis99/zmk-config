@@ -102,10 +102,7 @@
       label = "Top Macro";
       #binding-cells = <0>;
       bindings = 
-        <&macro_tap &kp Z>,
-        <&macro_tap &kp Z>,
-        <&macro_tap &kp Z>,
-        <&macro_tap &kp RET>;
+        <&macro_tap &kp Z &kp Z &kp Z &kp RET>;
     };
   };
 
