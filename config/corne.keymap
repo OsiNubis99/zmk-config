@@ -97,6 +97,16 @@
         <&macro_tap &kp Z>,
         <&macro_release &kp LEFT_SHIFT &kp RCTRL>;
     };
+    top: top {
+      compatible = "zmk,behavior-macro";
+      label = "Top Macro";
+      #binding-cells = <0>;
+      bindings = 
+        <&macro_tap &kp Z>,
+        <&macro_tap &kp Z>,
+        <&macro_tap &kp Z>,
+        <&macro_tap &kp RET>;
+    };
   };
 
   keymap {
