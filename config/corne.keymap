@@ -104,34 +104,6 @@
       bindings = 
         <&macro_tap &kp T &kp O &kp P &kp RET>;
     };
-    jg: jg {
-      compatible = "zmk,behavior-macro";
-      label = "Jg Macro";
-      #binding-cells = <0>;
-      bindings =
-        <&macro_tap &kp T &kp O &kp P &kp RET>;
-    };
-    mid: mid {
-      compatible = "zmk,behavior-macro";
-      label = "Mid Macro";
-      #binding-cells = <0>;
-      bindings =
-        <&macro_tap &kp T &kp O &kp P &kp RET>;
-    };
-    adc: adc {
-      compatible = "zmk,behavior-macro";
-      label = "Adc Macro";
-      #binding-cells = <0>;
-      bindings =
-        <&macro_tap &kp T &kp O &kp P &kp RET>;
-    };
-    sup: sup {
-      compatible = "zmk,behavior-macro";
-      label = "Sup Macro";
-      #binding-cells = <0>;
-      bindings =
-        <&macro_tap &kp T &kp O &kp P &kp RET>;
-    };
   };
 
   keymap {
