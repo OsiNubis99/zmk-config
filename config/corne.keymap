@@ -97,6 +97,15 @@
         <&macro_tap &kp Z>,
         <&macro_release &kp LEFT_SHIFT &kp RCTRL>;
     };
+    changeapp: changeapp {
+      compatible = "zmk,behavior-macro";
+      label = "Change App Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LALT>,
+        <&macro_tap &kp TAB>,
+        <&macro_release &kp LALT>;
+    };
     topline: topline {
       compatible = "zmk,behavior-macro";
       label = "Top Macro";
@@ -185,7 +194,7 @@
 
     SHOOTER {
       bindings = <
-    &kp ESC       &kp Q   &kp W   &kp E   &kp R      &kp T        &kp Y       &kp U  &kp I      &kp O    &kp P     &kp DEL
+    &kp ESC       &kp Q   &kp W   &kp E   &kp R      &kp T        &kp Y       &kp U  &kp I      &kp O    &kp P     &trans
     &kp TAB       &kp A   &kp S   &kp D   &kp F      &kp G        &kp H       &kp J  &kp K      &kp L    &kp SEMI  &sk LALT
     &lt KB_SET M  &kp Z   &kp X   &kp C   &kp V      &kp B        &kp N       &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
                                   &kp N2  &mo G_NUM  &kp SPACE    &kp RETURN  &mo 3  &kp BSPC
@@ -203,7 +212,7 @@
 
     KB_SETTINGS {
       bindings = <
-    &out OUT_TOG     &rgb_ug RGB_HUI  &none  &bt BT_NXT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI    &none         &none         &none         &none         &none         &none
+    &changeapp       &rgb_ug RGB_HUI  &none  &bt BT_NXT  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI    &none         &none         &none         &none         &none         &none
     &rgb_ug RGB_TOG  &rgb_ug RGB_HUD  &none  &bt BT_CLR  &kp C_BRI_DN     &kp C_BRI_UP       &none         &kp C_PREV    &kp C_PP      &kp C_STOP    &kp C_NEXT    &none
     &trans           &rgb_ug RGB_EFF  &none  &bt BT_PRV  &kp C_VOL_DN     &kp C_VOL_UP       &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
                                              &tog MOBA   &to DVORAK       &tog SHOOT         &none         &none         &none
