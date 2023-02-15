@@ -12,10 +12,10 @@
 #include <dt-bindings/led/led.h>
 
 #define QWERTY  0
-#define NUMBER  1
-#define MOVE    2
-#define MOBA    3
-#define SHOOT   4
+#define MOBA    1
+#define SHOOT   2
+#define NUMBER  3
+#define MOVE    4
 #define G_NUM   5
 #define KB_SET  6
 #define OS_SET  7
@@ -165,24 +165,6 @@
       >;
     };
 
-    NUMBER {
-      bindings = <
-    &trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-    &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &trans
-    &trans  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS    &kp PLUS   &kp LBKT  &kp LBRC         &kp RBRC  &kp RBKT  &trans
-                                  &trans     &trans     &trans       &trans     &kp LGUI  &trans
-      >;
-    };
-
-    MOVE {
-      bindings = <
-    &trans  &none     &none      &none      &paste    &copy     &none   &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
-    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &undo     &cut    &redo     &none   &none     &kp PSCRN  &trans
-    &kp F1  &kp F2    &kp F3     &kp F4     &kp F5    &kp F6    &kp F7  &kp F8    &kp F9  &kp F10   &kp F11    &kp F12
-                                 &trans     &kp LGUI  &trans    &trans  &trans    &trans
-      >;
-    };
-
     MOBA {
       bindings = <
     &kp P       &kp N1  &kp N2  &kp N3   &kp D      &kp G        &none       &none    &none     &none     &none     &sk LALT
@@ -201,11 +183,29 @@
       >;
     };
 
+    NUMBER {
+      bindings = <
+    &trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+    &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &trans
+    &trans  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS    &kp PLUS   &kp LBKT  &kp LBRC         &kp RBRC  &kp RBKT  &trans
+                                  &trans     &trans     &trans       &trans     &kp LGUI  &trans
+      >;
+    };
+
+    MOVE {
+      bindings = <
+    &trans  &none     &none      &none      &paste    &copy     &none   &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
+    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &undo     &cut    &redo     &none   &none     &kp PSCRN  &trans
+    &kp F1  &kp F2    &kp F3     &kp F4     &kp F5    &kp F6    &kp F7  &kp F8    &kp F9  &kp F10   &kp F11    &kp F12
+                                 &trans     &kp LGUI  &trans    &trans  &trans    &trans
+      >;
+    };
+
     GAME_NUMBERS{
       bindings = <
     &kp LGUI  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &trans    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &trans    &kp I   &kp H   &kp O   &kp P   &kp U        &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
+    &kp H     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+    &trans    &kp Y   &kp U   &kp I   &kp O   &kp P        &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
                               &trans  &trans  &trans       &trans    &kp LGUI  &trans
       >;
     };
