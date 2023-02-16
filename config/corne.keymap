@@ -158,9 +158,9 @@
 
     QWERTY {
       bindings = <
-    &sk LCTRL        &kp Q  &kp W  &kp E         &kp R       &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P           &sk LALT
-    &kp TAB          &kp A  &kp S  &kp D         &kp F       &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI        &sk DEL
-    &lt KB_SET BSLH  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp APOSTROPHE  &kp SLASH
+    &sk LCTRL        &kp Q  &kp W  &kp E         &kp R       &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LALT
+    &kp TAB          &kp A  &kp S  &kp D         &kp F       &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &sk DEL
+    &lt KB_SET BSLH  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
                                    &mt LGUI ESC  &mo NUMBER  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
       >;
     };
@@ -176,10 +176,10 @@
 
     SHOOTER {
       bindings = <
-    &kp GRAVE     &kp Q   &kp W   &kp E         &kp R      &kp T        &kp Y       &kp U   &kp I      &kp O    &kp P     &trans
-    &kp TAB       &kp A   &kp S   &kp D         &kp F      &kp G        &kp H       &kp J   &kp K      &kp L    &kp SEMI  &sk LALT
-    &lt KB_SET M  &kp Z   &kp X   &kp C         &kp V      &kp B        &kp N       &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp SLASH
-                                  &mt LALT ESC  &mo G_NUM  &kp SPACE    &kp RETURN  &mo MOVE  &trans
+    &kp GRAVE     &kp Q   &kp W   &kp E         &kp R      &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LCTRL
+    &kp TAB       &kp A   &kp S   &kp D         &kp F      &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &sk DEL
+    &lt KB_SET M  &kp Z   &kp X   &kp C         &kp V      &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
+                                  &mt LALT ESC  &mo G_NUM  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
       >;
     };
 
@@ -203,9 +203,9 @@
 
     GAME_NUMBERS{
       bindings = <
-    &kp LGUI  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &kp H     &kp N6  &kp N7  &kp N8  &kp N9  &kp N0       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &trans    &kp Y   &kp U   &kp I   &kp O   &kp P        &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
+    &kp LCTL    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+    &kp H       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0       &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+    &kp LSHIFT  &kp Y   &kp U   &kp I   &kp O   &kp P        &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
                               &trans  &trans  &trans       &trans    &kp LGUI  &trans
       >;
     };
