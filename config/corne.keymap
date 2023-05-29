@@ -164,59 +164,5 @@
                                    &mt LGUI ESC  &mo NUMBER  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
       >;
     };
-
-    MOBA {
-      bindings = <
-    &kp P       &kp N1  &kp N2  &kp N3   &kp D     &kp G        &none       &none     &none     &none     &none     &sk LCTRL
-    &kp TAB     &kp Q   &kp W   &kp E    &kp R     &kp T        &topline    &jgline   &midline  &adcline  &supline  &kp DEL
-    &mo KB_SET  &kp B   &kp N5  &kp N6   &kp F     &kp N4       &none       &none     &none     &none     &none     &trans
-                                &kp ESC  &kp LALT  &kp SPACE    &kp RETURN  &mo MOVE  &kp BSPC
-      >;
-    };
-
-    SHOOTER {
-      bindings = <
-    &kp GRAVE     &kp Q   &kp W   &kp E         &kp R      &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LCTRL
-    &kp TAB       &kp A   &kp S   &kp D         &kp F      &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &kp DEL
-    &lt KB_SET M  &kp Z   &kp X   &kp C         &kp V      &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
-                                  &mt LALT ESC  &mo G_NUM  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
-      >;
-    };
-
-    NUMBER {
-      bindings = <
-    &trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-    &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &trans
-    &trans  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS    &kp PLUS   &kp LBKT  &kp LBRC         &kp RBRC  &kp RBKT  &trans
-                                  &trans     &trans     &trans       &trans     &kp LGUI  &trans
-      >;
-    };
-
-    MOVE {
-      bindings = <
-    &trans  &none     &none      &none      &paste    &copy     &none    &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
-    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &undo     &cut     &redo     &none   &none     &kp PSCRN  &trans
-    &kp F1  &kp F2    &kp F3     &kp F4     &kp F5    &kp F6    &kp F7   &kp F8    &kp F9  &kp F10   &kp F11    &kp F12
-                                 &trans     &kp LGUI  &trans    &kp ESC  &trans    &trans
-      >;
-    };
-
-    GAME_NUMBERS{
-      bindings = <
-    &kp LCTRL   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &kp H       &kp N6  &kp N7  &kp N8  &kp N9  &kp N0      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &sk LSHIFT  &kp Y   &kp U   &kp I   &kp O   &kp P       &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
-                                &trans  &trans  &trans      &trans    &kp LGUI  &trans
-      >;
-    };
-
-    KB_SETTINGS {
-      bindings = <
-    &changeapp       &rgb_ug RGB_HUI  &kp C_NEXT  &kp C_VOL_UP  &rgb_ug RGB_BRI  &kp C_BRI_UP      &none         &none         &none         &none         &none         &none
-    &rgb_ug RGB_TOG  &rgb_ug RGB_HUD  &kp C_PREV  &kp C_VOL_DN  &rgb_ug RGB_BRD  &kp C_BRI_DN      &none         &none         &none         &none         &none         &none
-    &trans           &rgb_ug RGB_EFF  &kp C_PP    &copy         &paste           &none             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-                                                  &tog MOBA     &to QWERTY       &tog SHOOT        &none         &bt BT_CLR    &none
-      >;
-    };
   };
 };
