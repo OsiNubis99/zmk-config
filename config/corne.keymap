@@ -7,9 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-#include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/bt.h>
-#include <dt-bindings/led/led.h>
 
 #define QWERTY  0
 #define MOBA    1
@@ -20,37 +18,104 @@
 #define KB_SET  6
 #define OS_SET  7
 
-&spi1 {
-  compatible = "nordic,nrf-spim";
-  status = "okay";
-  mosi-pin = <6>;
-  sck-pin = <5>;
-  miso-pin = <7>;
-  led_strip: ws2812@0 {
-    compatible = "worldsemi,ws2812-spi";
-    label = "SK6812mini";
-    /* SPI */
-    reg = <0>;/* ignored, but necessary for SPI bindings */
-    spi-max-frequency = <4000000>;
-    /* WS2812 */
-    chain-length = <27>;/* There are per-key RGB, but the first 6 are underglow */
-    spi-one-frame = <0x70>;
-    spi-zero-frame = <0x40>;
-    color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-  };
-};
-
-/ {
-  chosen {
-    zmk,underglow = &led_strip;
-  };
-};
-
 &mt {
-  tapping-term-ms = <400>;
+  retro-tap;
 };
 
 / {
+  macros {
+    paste: paste {
+      compatible = "zmk,behavior-macro";
+      label = "Paste Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LCTRL>,
+        <&macro_tap &kp V>,
+        <&macro_release &kp LCTRL>;
+    };
+    copy: copy {
+      compatible = "zmk,behavior-macro";
+      label = "Copy Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LCTRL>,
+        <&macro_tap &kp C>,
+        <&macro_release &kp LCTRL>;
+    };
+    cut: cut {
+      compatible = "zmk,behavior-macro";
+      label = "Cut Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LCTRL>,
+        <&macro_tap &kp X>,
+        <&macro_release &kp LCTRL>;
+    };
+    undo: undo {
+      compatible = "zmk,behavior-macro";
+      label = "Undo Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LCTRL>,
+        <&macro_tap &kp Z>,
+        <&macro_release &kp LCTRL>;
+    };
+    redo: redo {
+      compatible = "zmk,behavior-macro";
+      label = "Redo Macro";
+      #binding-cells = <0>;
+      bindings =
+        <&macro_press &kp LCTRL &kp LEFT_SHIFT>,
+        <&macro_tap &kp Z>,
+        <&macro_release &kp LEFT_SHIFT &kp LCTRL>;
+    };
+    topline: topline {
+      compatible = "zmk,behavior-macro";
+      label = "Top Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp T &kp O &kp P &kp RET>;
+    };
+    jgline: jgline {
+      compatible = "zmk,behavior-macro";
+      label = "Jg Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp J &kp G &kp RET>;
+    };
+    midline: midline {
+      compatible = "zmk,behavior-macro";
+      label = "Mid Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp M &kp I &kp D &kp RET>;
+    };
+    adcline: adcline {
+      compatible = "zmk,behavior-macro";
+      label = "Adc Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp A &kp D &kp C &kp RET>;
+    };
+    supline: supline {
+      compatible = "zmk,behavior-macro";
+      label = "Sup Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp S &kp U &kp P &kp RET>;
+    };
+  };
+
   keymap {
     compatible = "zmk,keymap";
 
@@ -60,6 +125,60 @@
     &kp TAB          &kp A  &kp S  &kp D         &kp F       &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &kp DEL
     &lt KB_SET BSLH  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
                                    &mt LGUI ESC  &mo NUMBER  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
+      >;
+    };
+
+    MOBA {
+      bindings = <
+    &kp P       &kp N1  &kp N2  &kp N3   &kp D     &kp G        &none       &none     &none     &none     &none     &sk LCTRL
+    &kp TAB     &kp Q   &kp W   &kp E    &kp R     &kp T        &topline    &jgline   &midline  &adcline  &supline  &kp DEL
+    &mo KB_SET  &kp B   &kp N5  &kp N6   &kp F     &kp N4       &kp LSHFT   &none     &none     &none     &none     &trans
+                                &kp ESC  &kp LALT  &kp SPACE    &kp RETURN  &mo MOVE  &kp BSPC
+      >;
+    };
+
+    SHOOTER {
+      bindings = <
+    &kp GRAVE     &kp Q   &kp W   &kp E         &kp R      &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LCTRL
+    &kp TAB       &kp A   &kp S   &kp D         &kp F      &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &kp DEL
+    &lt KB_SET M  &kp Z   &kp X   &kp C         &kp V      &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
+                                  &mt LALT ESC  &mo G_NUM  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
+      >;
+    };
+
+    NUMBER {
+      bindings = <
+    &trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
+    &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &trans
+    &trans  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS    &kp PLUS   &kp LBKT  &kp LBRC         &kp RBRC  &kp RBKT  &trans
+                                  &trans     &trans     &trans       &trans     &kp LGUI  &trans
+      >;
+    };
+
+    MOVE {
+      bindings = <
+    &trans  &none     &none      &none      &none     &none     &none   &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
+    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &none     &none   &none     &none   &none     &kp PSCRN  &trans
+    &kp F1  &kp F2    &kp F3     &kp F4     &kp F5    &kp F6    &kp F7  &kp F8    &kp F9  &kp F10   &kp F11    &kp F12
+                                 &trans     &kp LGUI  &trans    &none   &trans    &trans
+      >;
+    };
+
+    GAME_NUMBERS{
+      bindings = <
+    &kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+    &kp H    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
+    &kp N    &kp Y   &kp U   &kp I   &kp O   &kp P       &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
+                             &trans  &trans  &trans      &trans    &kp LGUI  &trans
+      >;
+    };
+
+    KB_SETTINGS {
+      bindings = <
+    &none   &none  &none     &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP      &none         &none         &none         &none         &none         &none
+    &none   &none  &kp C_PP  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN      &none         &none         &none         &none         &none         &none
+    &trans  &undo  &cut      &copy       &paste        &redo             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+                             &to MOBA    &to QWERTY    &to SHOOT         &none         &bt BT_CLR    &none
       >;
     };
   };
