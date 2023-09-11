@@ -9,7 +9,7 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/bt.h>
 
-#define QWERTY  0
+#define DVORAK  0
 #define MOBA    1
 #define SHOOT   2
 #define NUMBER  3
@@ -114,71 +114,165 @@
       bindings =
         <&macro_tap &kp S &kp U &kp P &kp RET>;
     };
+    nomsg: nomsg {
+      compatible = "zmk,behavior-macro";
+      label = "Sup Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp N &kp O &kp SPACE >;
+    };
+    ggmsg: ggmsg {
+      compatible = "zmk,behavior-macro";
+      label = "Sup Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp G &kp G &kp SPACE >;
+    };
+    nomsg: nomsg {
+      compatible = "zmk,behavior-macro";
+      label = "Sup Macro";
+      #binding-cells = <0>;
+      tap-ms = <1>;
+      wait-ms = <1>;
+      bindings =
+        <&macro_tap &kp I &kp Z &kp I &kp SPACE >;
+    };
+  };
+
+  behaviors {
+    td0: tap_dance_0 {
+      compatible = "zmk,behavior-tap-dance";
+      label = "TAP_DANCE_0";
+      #binding-cells = <0>;
+      tapping-term-ms = <200>;
+      bindings = <&mo NUMBER>, <&sk LSHFT>;
+    };
+    gresc: grave_escape {
+      compatible = "zmk,behavior-mod-morph";
+      label = "GRAVE_ESCAPE";
+      #binding-cells = <0>;
+      bindings = <&kp ESC>, <&kp GRAVE>;
+      mods = <(MOD_LSFT|MOD_LGUI)>;
+      keep-mods = <(MOD_LSFT)>;
+    };
   };
 
   keymap {
     compatible = "zmk,keymap";
 
-    QWERTY {
+    DVORAK {
       bindings = <
-    &sk LALT         &kp Q  &kp W  &kp E         &kp R       &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LCTRL
-    &kp TAB          &kp A  &kp S  &kp D         &kp F       &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &kp DEL
-    &lt KB_SET BSLH  &kp Z  &kp X  &kp C         &kp V       &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
-                                   &mt LGUI ESC  &mo NUMBER  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
-      >;
-    };
-
-    MOBA {
-      bindings = <
-    &kp P       &kp N1  &kp N2  &kp N3   &kp D     &kp G        &none       &none     &none     &none     &none     &sk LCTRL
-    &kp TAB     &kp Q   &kp W   &kp E    &kp R     &kp T        &topline    &jgline   &midline  &adcline  &supline  &kp DEL
-    &mo KB_SET  &kp B   &kp N5  &kp N6   &kp F     &kp N4       &kp LSHFT   &none     &none     &none     &none     &trans
-                                &kp ESC  &kp LALT  &kp SPACE    &kp RETURN  &mo MOVE  &kp BSPC
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp LALT         &kp SQT          &kp COMMA        &kp DOT          &kp P            &kp Y                &kp F            &kp G            &kp C            &kp R            &kp L            &sk LCTRL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp TAB          &kp A            &kp O            &kp E            &kp U            &kp I                &kp D            &kp H            &kp T            &kp N            &kp S            &kp DEL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &lt KB_SET BSLH  &kp SEMI         &kp Q            &kp J            &kp K            &kp X                &kp B            &kp M            &kp W            &kp V            &kp Z            &mt LSHFT SLASH
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &mt LGUI ESC     &td0             &kp SPACE            &mt LSHFT RET    &mo MOVE         &kp BSPC
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
 
     SHOOTER {
       bindings = <
-    &kp GRAVE     &kp Q   &kp W   &kp E         &kp R      &kp T        &kp Y          &kp U     &kp I      &kp O    &kp P      &sk LCTRL
-    &kp TAB       &kp A   &kp S   &kp D         &kp F      &kp G        &kp H          &kp J     &kp K      &kp L    &kp SEMI   &kp DEL
-    &lt KB_SET M  &kp Z   &kp X   &kp C         &kp V      &kp B        &kp N          &kp M     &kp COMMA  &kp DOT  &kp SLASH  &kp APOSTROPHE
-                                  &mt LALT ESC  &mo G_NUM  &kp SPACE    &mt LSHFT RET  &mo MOVE  &kp BSPC
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp LALT         &kp Q            &kp W            &kp E            &kp R            &kp T                &kp Y            &kp U            &kp I            &kp O            &kp P            &sk LCTRL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp TAB          &kp A            &kp S            &kp D            &kp F            &kp G                &kp H            &kp J            &kp K            &kp L            &kp SEMI         &kp DEL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &lt KB_SET M     &kp Z            &kp X            &kp C            &kp V            &kp B                &kp N            &kp M            &kp COMMA        &kp DOT          &kp SLASH        &mt LSHFT SLASH
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &sk ESC          &mo G_NUM        &kp SPACE            &mt LSHFT RET    &mo MOVE         &kp BSPS
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
+      >;
+    };
+
+    EOA {
+      bindings = <
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp LALT         &kp A            &kp S            &kp D            &kp F            &kp G                &kp H            &kp J            &kp K            &kp L            &kp SEMI         &sk LCTRL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp TAB          &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &kp DEL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &lt KB_SET M     &kp Z            &kp X            &kp C            &kp V            &kp B                &kp N            &kp M            &kp COMMA        &kp DOT          &kp SLASH        &mt LSHFT SLASH
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &mt LALT ESC     &mo G_NUM        &kp SPACE            &mt LSHFT RET    &mo MOVE         &kp BSPC
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
+      >;
+    };
+
+    MOBA {
+      bindings = <
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp ESC          &kp N1           &kp N2           &kp N3           &kp D            &kp G                &nomsg           &ggmsg           &izimsg            &none            &none            &sk LCTRL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp TAB          &kp Q            &kp W            &kp E            &kp R            &kp H                &topline         &jgline          &midline         &adcline         &supline         &kp DEL
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &mo KB_SET       &kp B            &kp N5           &kp N6           &kp F            &kp N4               &none            &none            &none            &none            &none            &mt LSHFT SLASH
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &kp P            &kp LSHFT        &kp SPACE            &kp RETURN       &mo MOVE         &kp BSPC
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
 
     NUMBER {
       bindings = <
-    &trans  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS  &kp KP_MULTIPLY  &kp LPAR  &kp RPAR  &trans
-    &trans  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5       &kp N6     &kp N7    &kp N8           &kp N9    &kp N0    &trans
-    &trans  &kp EQUAL  &kp GRAVE  &kp TILDE  &kp UNDER  &kp MINUS    &kp PLUS   &kp LBKT  &kp LBRC         &kp RBRC  &kp RBKT  &trans
-                                  &trans     &trans     &trans       &trans     &kp LGUI  &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &kp EXCL         &kp AT           &kp HASH         &kp DLLR         &kp PRCNT            &kp CARET        &kp AMPS         &kp KP_MULTIPLY  &kp LPAR         &kp RPAR         &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &kp EQUAL        &kp GRAVE        &kp TILDE        &kp UNDER        &kp MINUS            &kp PLUS         &kp LBKT         &kp LBRC         &kp RBRC         &kp RBKT         &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &trans           &trans           &trans               &trans           &kp LGUI         &trans
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
 
     MOVE {
       bindings = <
-    &trans  &none     &none      &none      &none     &none     &none   &kp LEFT  &kp UP  &kp DOWN  &kp RIGHT  &trans
-    &trans  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END   &none     &none   &none     &none   &none     &kp PSCRN  &trans
-    &kp F1  &kp F2    &kp F3     &kp F4     &kp F5    &kp F6    &kp F7  &kp F8    &kp F9  &kp F10   &kp F11    &kp F12
-                                 &trans     &kp LGUI  &trans    &none   &trans    &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &none            &none            &none            &none            &none                &none            &kp LEFT         &kp UP           &kp DOWN         &kp RIGHT        &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &kp HOME         &kp PG_DN        &kp PG_UP        &kp END          &none                &none            &none            &none            &none            &kp PSCRN        &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp F1           &kp F2           &kp F3           &kp F4           &kp F5           &kp F6               &kp F7           &kp F8           &kp F9           &kp F10          &kp F11          &kp F12
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &trans           &kp LGUI         &trans               &none            &trans           &trans
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
 
     GAME_NUMBERS{
       bindings = <
-    &kp ESC  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &kp H    &kp N6  &kp N7  &kp N8  &kp N9  &kp N0      &kp N6    &kp N7    &kp N8    &kp N9    &kp N0    &trans
-    &kp N    &kp Y   &kp U   &kp I   &kp O   &kp P       &kp PLUS  &kp LBKT  &kp LBRC  &kp RBRC  &kp RBKT  &trans
-                             &trans  &trans  &trans      &trans    &kp LGUI  &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp GRAVE        &kp N1           &kp N2           &kp N3           &kp N4           &kp N5               &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp H            &kp N6           &kp N7           &kp N8           &kp N9           &kp N0               &kp N6           &kp N7           &kp N8           &kp N9           &kp N0           &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &kp N            &kp Y            &kp U            &kp I            &kp O            &kp P                &kp PLUS         &kp LBKT         &kp LBRC         &kp RBRC         &kp RBKT         &trans
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &trans           &trans           &trans               &trans           &kp LGUI         &trans
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
 
     KB_SETTINGS {
       bindings = <
-    &none   &none  &none     &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP      &none         &none         &none         &none         &none         &none
-    &none   &none  &kp C_PP  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN      &none         &none         &none         &none         &none         &none
-    &trans  &undo  &cut      &copy       &paste        &redo             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-                             &to MOBA    &to QWERTY    &to SHOOT         &none         &bt BT_CLR    &none
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &none            &kp C_NEXT       &kp C_VOL_UP     &kp C_BRI_UP     &paste           &copy                &none            &none            &none            &redo            &none            &none
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &none            &kp C_PREV       &kp C_VOL_DN     &kp C_BRI_DN     &undo            &none                &cut             &none            &none            &none            &none            &none
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+    &trans           &kp C_PP         &none            &none            &none            &none                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none
+  //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
+                                                       &to MOBA         &to DVORAK       &to SHOOT            &none            &bt BT_CLR       &none
+  //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
   };
