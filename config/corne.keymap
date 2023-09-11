@@ -10,13 +10,14 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define DVORAK  0
-#define MOBA    1
-#define SHOOT   2
-#define NUMBER  3
-#define MOVE    4
-#define G_NUM   5
-#define KB_SET  6
-#define OS_SET  7
+#define SHOOT   1
+#define EOA     2
+#define MOBA    3
+#define NUMBER  4
+#define MOVE    5
+#define G_NUM   6
+#define KB_SET  7
+#define OS_SET  8
 
 &mt {
   retro-tap;
@@ -116,7 +117,7 @@
     };
     nomsg: nomsg {
       compatible = "zmk,behavior-macro";
-      label = "Sup Macro";
+      label = "No Macro";
       #binding-cells = <0>;
       tap-ms = <1>;
       wait-ms = <1>;
@@ -125,16 +126,16 @@
     };
     ggmsg: ggmsg {
       compatible = "zmk,behavior-macro";
-      label = "Sup Macro";
+      label = "GG Macro";
       #binding-cells = <0>;
       tap-ms = <1>;
       wait-ms = <1>;
       bindings =
         <&macro_tap &kp G &kp G &kp SPACE >;
     };
-    nomsg: nomsg {
+    izimsg: izimsg {
       compatible = "zmk,behavior-macro";
-      label = "Sup Macro";
+      label = " Macro";
       #binding-cells = <0>;
       tap-ms = <1>;
       wait-ms = <1>;
@@ -271,7 +272,7 @@
   //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
     &trans           &kp C_PP         &none            &none            &none            &none                &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2     &bt BT_SEL 3     &bt BT_SEL 4     &none
   //----------------+----------------+----------------+----------------+----------------+---------------+    +----------------+----------------+----------------+----------------+----------------+---------------+
-                                                       &to MOBA         &to DVORAK       &to SHOOT            &none            &bt BT_CLR       &none
+                                                       &to MOBA         &to DVORAK       &to SHOOT            &to EOA          &bt BT_CLR       &none
   //                                                  +----------------+----------------+---------------+    +----------------+----------------+----------------+
       >;
     };
