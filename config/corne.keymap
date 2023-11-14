@@ -275,10 +275,10 @@
 
         KB_SETTINGS {
             bindings = <
-&rgb_ug RGB_EFF  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP  &paste  &copy    &none         &none         &none         &redo         &none         &none
-&rgb_ug RGB_TOG  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN  &undo   &none    &cut          &none         &none         &none         &none         &none
-&trans           &kp C_PP    &none         &none         &none   &none    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
-                                           &to 4         &to 0   &to 2    &to 3         &bt BT_CLR    &to 1
+&rgb_ug RGB_EFF  &kp C_NEXT  &kp C_VOL_UP  &kp C_BRI_UP  &paste           &copy              &none         &none         &none         &redo         &none         &rgb_ug RGB_COLOR_HSB(51,100,50)
+&rgb_ug RGB_TOG  &kp C_PREV  &kp C_VOL_DN  &kp C_BRI_DN  &undo            &none              &cut          &none         &none         &none         &none         &rgb_ug RGB_COLOR_HSB(190,100,50)
+&trans           &kp C_PP    &none         &none         &rgb_ug RGB_HUD  &rgb_ug RGB_HUI    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &none
+                                           &to 4         &to 0            &to 2              &to 3         &bt BT_CLR    &to 1
             >;
         };
     };
